@@ -1,6 +1,0 @@
-// check-pass
-
-
-fn main() {
-    
-}
