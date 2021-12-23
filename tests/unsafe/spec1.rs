@@ -33,7 +33,7 @@ fn split_at_mut(slice: & [i32], mid: usize) -> (& [i32], & [i32])
             slice::from_raw_parts(ptr, mid),
             // <!borrowed (ptr, 6) /\ borrowed  (ptr, 2)>
             // <!borrowed (ptr+2, 4)>
-            /* !borrowed (ptr+2, 4) |= !borrowed (ptr+2-1, 4) : Invalid */
+            /* !borrowed (ptr+2, 4) |= !borrowed (ptr+1, 4) : Invalid */
             slice::from_raw_parts(ptr.add(mid-1), len - mid),
             // aborted....
 
